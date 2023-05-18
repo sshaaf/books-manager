@@ -2,42 +2,48 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Book} from "../model/book.model";
-import {environment} from "../../environment";
+import {environment} from "../../environments/environment";
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
-  baseUrl = environment.booksAPI;
+  private apiUrl: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.apiUrl = environment.booksApiUrl;
+    console.log("API "+this.apiUrl)
+
+  }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.baseUrl);
+    return this.http.get<Book[]>(this.apiUrl);
   }
 
   get(isbn: any): Observable<Book> {
-    return this.http.get<Book>(`${this.baseUrl}/${isbn}`);
+    return this.http.get<Book>(`${this.apiUrl}/${isbn}`);
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(this.baseUrl, data);
+    return this.http.post(this.apiUrl, data);
   }
 
   update(isbn: any, data: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${isbn}`, data);
+    return this.http.put(`${this.apiUrl}/${isbn}`, data);
   }
 
   delete(isbn: any): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${isbn}`);
+    return this.http.delete(`${this.apiUrl}/${isbn}`);
   }
 
   deleteAll(): Observable<any> {
-    return this.http.delete(this.baseUrl);
+    return this.http.delete(this.apiUrl);
   }
 
   findByTitle(title: any): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.baseUrl}?title=${title}`);
+    return this.http.get<Book[]>(`${this.apiUrl}?title=${title}`);
   }
 }
