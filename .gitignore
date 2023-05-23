@@ -141,6 +141,9 @@ mvnw.cmd
 .dockerignore
 
 .vscode/
+.idea
 
+.angular
+dist/
 
 # End of https://www.gitignore.io/api/node,java,maven
