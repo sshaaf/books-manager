@@ -1,11 +1,11 @@
 {
-  "name": "books-manager",
+  "name": "bookshelf-ui",
   "author": "Shaaf, Syed <https://github.com/sshaaf>",
   "version": "0.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sshaaf/books-manager.git"
+    "url": "https://github.com/sshaaf/bookshelf-ui.git"
   },
   "ng": "node_modules/@angular/cli/bin/ng",
   "scripts": {
