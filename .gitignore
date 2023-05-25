@@ -139,7 +139,8 @@ mvnw.cmd
 .project
 .classpath
 .dockerignore
-
+.idea
+.angular
 .vscode/
 
 

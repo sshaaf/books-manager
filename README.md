@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-The backend API app exists here: [Quarkus based Books API](https://github.com/sshaaf/books-manager-quarkus)
+The backend API app exists here: [Quarkus based Books API](https://github.com/sshaaf/bookshelf-ui-quarkus)
 
 ## Build
 
@@ -21,8 +21,8 @@ Before getting into the build process you will also need to add the Books API UR
 
 ```
 ng build
-oc new-build --name books-manager --binary --strategy source --image-stream httpd
-oc start-build books-manager --from-dir dist/books-manager --follow
-oc new-app --image-stream=books-manager:latest
-oc expose service/books-manager
+oc new-build --name bookshelf-ui --binary --strategy source --image-stream httpd
+oc start-build bookshelf-ui --from-dir dist/bookshelf-ui --follow
+oc new-app --image-stream=bookshelf-ui:latest
+oc expose service/bookshelf-ui
 ```
